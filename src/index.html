@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Challenge Encriptador Alura</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Navbar -->
+
+        <div class="navbar">
+            <div class="logo">
+                <img src="../public/Logo Alura.png" alt="logo">
+                <p>Alura Latam</p>
+            </div>
+        </div>
+
+        <!-- Warning && Textarea -->
+
+        <div id="warning">
+        </div>
+        <div class="textarea-container">
+            <textarea id='textarea' class="textarea" placeholder="Ingrese la palabra que desea encriptar..."></textarea>
+        </div>
+
+        <!-- Advice -->
+
+        <div class="advice">
+            <img src="../public/exclamation-circle-fill.png" alt="warning" srcset="">
+            <p>Solo letras minusculas y sin acentos</p>
+        </div>
+
+        <!-- Buttons -->
+
+        <div class="buttons">
+            <button type='submit' id='encriptar' class="button_encriptar">Encriptar</button>
+            <button type='submit' id='desencriptar' class="button_desencriptar">Desencriptar</button>
+        </div>
+
+        <!-- Encrypted Msg -->
+
+        <div id='encrypted-text' class="encrypted-container">
+            <span id="header" class="header"></span>
+            <small><p id="textos-encriptados" class="smaller"></p></small>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
