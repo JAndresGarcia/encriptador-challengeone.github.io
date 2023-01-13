@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="./src/reset.css">
+    <title>Challenge Encriptador Alura</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="./public/Logo Alura.png" alt="logo">
+                <p class="text-logo">Alura Latam</p>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Warning && Textarea -->
+        <section class="text-area">
+            <!-- Warning Start -->
+            <div id="warning">
+            </div>
+            <!-- Warning End -->
+
+            <!-- Textare Start -->
+            <div class="textarea-container">
+                <textarea id='textarea' class="textarea"
+                    placeholder="Ingrese la palabra que desea encriptar..."></textarea>
+            </div>
+            <!-- Textarea End -->
+
+            <!-- Advice Start-->
+
+            <!-- Advice End-->
+
+            <!-- Buttons Start -->
+            <div class="buttons-container">
+                <div class="advice">
+                    <img src="./public/exclamation-circle-fill.png" alt="warning" srcset="">
+                    <p>Solo letras minusculas y sin acentos</p>
+                </div>
+                <div class="buttons">
+                    <button type='submit' id='encriptar' class="button_encriptar">Encriptar</button>
+                    <button type='submit' id='desencriptar' class="button_desencriptar">Desencriptar</button>
+                </div>
+            </div>
+            <!-- Buttons End -->
+        </section>
+        <section class="encrypted-texts">
+            <div id='encrypted-text' class="encrypted-container">
+                <img id="munheco" src="./public/Muñeco.png" alt="Muñeco">
+                <span id="header" class="header"></span>
+                <small>
+                    <p id="textos-encriptados" class="smaller"></p>
+                </small>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Created By Julián García</p>
+    </footer>
+    <!-- Encrypted Msg -->
+    <script src="/src/index.js"></script>
+</body>
+
+</html>
