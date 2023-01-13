@@ -36,6 +36,10 @@ line-height: 150%;
     box-sizing: border-box;
 }
 
+main {
+    width: 100vw;
+}
+
 body {
     background-color: var(--gray-100);
     font-family: 'Roboto', sans-serif;
@@ -210,7 +214,7 @@ body {
     font-size: 16px;
     line-height: 150%;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
-
+    background-color: whitesmoke;
 }
 
 .button_desencriptar:hover {
@@ -230,7 +234,7 @@ body {
     flex-direction: column;
     height: 186px;
     width: 100%;
-    padding:0 32px;
+    padding: 0 32px;
     gap: 16px;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
     border-radius: 32px;
@@ -268,4 +272,114 @@ body {
 
 ol {
     padding-inline-start: 15px !important;
+}
+
+/* Responsive zone */
+
+@media only screen and (min-width: 960px) {
+    /* styles for desktop devices */
+
+    main {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .logo {
+        padding: 40px 60px;
+    }
+    .container {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        margin: 0 auto;
+        width: 100%;
+        height: 80vh;
+    }
+
+    .textarea-container {
+        width: 100%;
+        margin: 0;
+        height: 75%;
+        padding: 0 40px;
+    }
+    #warning {
+        position: relative;
+        top: 50px;
+        font-size: 24px;
+    }
+    textarea {
+        margin: 0;
+        width: 100% !important;
+        height: 100%;
+    }
+
+    .text-area {
+        height: 100%;
+        width: 100%;
+    }
+
+    .encrypted-texts {
+        width: 30%;
+        height: 100%;
+        margin: 0 2rem;
+        padding: 20px 0;
+    }
+
+    .encrypted-container {
+        margin: 0 auto;
+        height: 100%;
+        margin: 0 0;
+    }
+
+    #munheco {
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+    }
+
+    button {
+        width: 450px;
+        cursor: pointer;
+    }
+
+    .buttons-container {
+        display: flex;
+        width: 900px;
+        margin: 0 auto;
+        flex-direction: column;
+    }
+
+    .advice {
+        margin: 20px 0;
+    }
+
+    .button_desencriptar{
+        background-color: #D8DFE8;
+    }
+    .textarea::placeholder {
+        font-size: 22px;
+    }
+    .textarea {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 960px) {
+
+    /* styles for tablet devices */
+    #munheco {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    /* styles for mobile devices */
+    #munheco {
+        display: none;
+    }
 }

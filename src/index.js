@@ -12,16 +12,20 @@ window.addEventListener("load", function () {
     // Obtener el elemento textarea y el elemento div de warning
     const textarea = document.getElementById("textarea");
     const warning = document.getElementById("warning");
+    const munheco = document.getElementById("munheco");
     let encriptados = [];
     let desencriptados = [];
-    let textos = [];
+    var textos = [];
 
 
     if (encriptados.length === 0 && desencriptados.length === 0) {
-        document.getElementById("header").innerHTML = "Ningún mensaje fue encontrado";
-        document.getElementById("textos-encriptados").innerHTML = "Aquí van tus textos";
-    }
 
+        // Establece la URL de la imagen
+        // Agrega la imagen al elemento "container"
+        munheco.style.visibility = 'visible';
+        document.getElementById("textos-encriptados").innerHTML = "Aquí van tus textos";
+        document.getElementById("header").innerHTML = "Ningún mensaje fue encontrado";
+    }
     if (encriptados.length > 3) {
         document.getElementById("textos-encriptados").style.marginTop = '40px';
     }
@@ -82,8 +86,10 @@ window.addEventListener("load", function () {
     buttonEncriptar.addEventListener("click", function Encriptar() {
         const textarea = document.getElementById('textarea');
         const warning = document.getElementById("warning");
-        text = textarea.value
-        vacio = text.length = 0
+        const munheco = document.getElementById("munheco");
+        text = textarea.value;
+        vacio = text.length = 0;
+
         if (!vacio) {
             if (/[A-Z]/.test(text)) {
                 warning.innerHTML = "Sólo se pueden usar letras minúsculas sin acentos";
@@ -122,6 +128,8 @@ window.addEventListener("load", function () {
                         .replace(/o/g, 'ober')
                         .replace(/u/g, 'ufat');
                 encriptados.push(encrypted);
+                console.log(encrypted);
+                munheco.style.display = 'none';
                 textarea.value = '';
                 document.getElementById("header").innerHTML = "Tus mensajes encriptados:";
                 let listaEncriptados = encriptados.map(texto => `<li>${texto}</li>`).join('');
@@ -133,6 +141,7 @@ window.addEventListener("load", function () {
     const buttonDesencriptar = document.getElementById('desencriptar');
 
     function Desencriptar(textarea) {
+
         text = textarea.value
 
         if (encriptados.length === 0) {
@@ -147,6 +156,7 @@ window.addEventListener("load", function () {
             document.getElementById("header").innerHTML = "Tus mensajes desencriptados:";
             let listaDesencriptados = desencriptados.map(texto => `<li>${texto}</li>`).join('');
             document.getElementById("textos-encriptados").innerHTML = `<ol>${listaDesencriptados}</ol>`;
+            textarea.value = '';
         } else if (encriptados.length > 0 && text !== '') {
             let desencriptar = encriptados.shift();
             const desencriptado =
@@ -158,10 +168,10 @@ window.addEventListener("load", function () {
                     .replace(/ufat/g, 'u');
 
             desencriptados.push(desencriptado);
+            textarea.value = '';
             document.getElementById("header").innerHTML = "Tus mensajes desencriptados:";
             let listaDesencriptados = desencriptados.map(texto => `<li>${texto}</li>`).join('');
             document.getElementById("textos-encriptados").innerHTML = `<ol>${listaDesencriptados}</ol>`;
-
         }
         console.log('encriptados ' + encriptados);
         console.log('desencriptados ' + desencriptados);
